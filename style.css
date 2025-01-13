@@ -2,6 +2,7 @@
     --red: #c4291c;
     --mouse-x: -300vw;
     --mouse-y: -300vh;
+    --scroll: 0;
 }
 
 * {
