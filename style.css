@@ -1,5 +1,7 @@
 :root {
     --red: #c4291c;
+    --mouse-x: -300vw;
+    --mouse-y: -300vh;
 }
 
 * {
@@ -9,9 +11,10 @@
 
 body {
     background:
-        linear-gradient(#000d, #000d),
-        radial-gradient(circle at 20% 30%, var(--red), transparent 40%),
-        radial-gradient(circle at 70% 50%, var(--red), transparent 50%),
+        linear-gradient(20deg, #000c, #000d),
+        radial-gradient(
+            circle at var(--mouse-x) calc(var(--mouse-y) + var(--scroll) * 100vh),
+            var(--red), transparent 90%),
         radial-gradient(circle at 30% 60%, #3300ff, transparent 60%),
         radial-gradient(circle at 80% 20%, #3300ff, transparent 70%),
         linear-gradient(black, black);
@@ -240,11 +243,9 @@ footer {
     overflow: hidden;
 }
 
-footer div {
+footer > div {
     background: white;
-    display: grid;
-    grid-auto-flow: column;
-    place-items: center;
+    display: flex;
 
     padding: 5vh 0;
     height: 5vh;
@@ -252,11 +253,48 @@ footer div {
     translate: 0 calc((1.15 - var(--scroll)) * 100vh);
 }
 
-
 @media (min-height: 100vw) {
-    footer div {
+    footer > div {
         translate: 0 0;
     }
+}
+
+footer .icons {
+    padding: 0 5vh;
+    display: flex;
+    gap: 2.5vh;
+}
+
+footer .icons img {
+    width: auto;
+    height: 5vh;
+}
+
+footer .icons a {
+    position: relative;
+    border-radius: .75vh;
+    overflow: hidden;
+    box-shadow: 0 0 5px 1px #0002;
+}
+
+footer .icons a::after {
+    content: "";
+    position: absolute;
+    display: block;
+    inset: 0;
+
+    transition: background .4s;
+}
+
+footer .icons a:hover::after {
+    background: #fff2;
+}
+
+footer .text {
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    flex-grow: 1;
 }
 
 footer .contact {

@@ -20,6 +20,11 @@ window.onscroll = () => {
     }
 }
 
+window.onmousemove = ev => {
+    document.body.style.setProperty("--mouse-x", ev.clientX + "px");
+    document.body.style.setProperty("--mouse-y", ev.clientY + "px")
+}
+
 fetch("https://hcb.hackclub.com/chsane/donations").then(res => res.text()).then(html => {
     total = +html.match(/stat__value">(.+?)</)[1];
 });
