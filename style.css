@@ -253,6 +253,13 @@ footer div {
     translate: 0 calc((1.15 - var(--scroll)) * 100vh);
 }
 
+
+@media (min-height: 100vw) {
+    footer div {
+        translate: 0 0;
+    }
+}
+
 footer .contact {
     color: transparent;
     background:
