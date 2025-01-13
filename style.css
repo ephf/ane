@@ -50,18 +50,6 @@ header h1 span {
     opacity: calc(1 - var(--scroll));
 }
 
-@media (min-height: 100vw) {
-    header > h1 {
-        writing-mode: vertical-lr;
-        font-size: 55vh;
-
-        height: 100%;
-        width: fit-content;
-        left: -.21em;
-        top: 0;
-    }
-}
-
 header h1 .a { background-image: url(assets/IMG_3902.jpg); --x: 1.4; --y: 1; }
 header h1 .n { background-image: url(assets/IMG_3914.jpg); --x: 1.03; --y: 1.1; }
 header h1 .e { background-image: url(assets/IMG_3963.jpg); --x: -1; --y: 1.4; }
@@ -76,6 +64,24 @@ header div {
 
     translate: -50% 0;
     text-shadow: 0 0 10px black;
+}
+
+@media (min-height: 100vw) {
+    header > h1 {
+        writing-mode: vertical-lr;
+        font-size: 55vh;
+
+        height: 100%;
+        width: fit-content;
+        left: -.21em;
+        top: 0;
+    }
+
+    header div {
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+    }
 }
 
 header div h1 {
